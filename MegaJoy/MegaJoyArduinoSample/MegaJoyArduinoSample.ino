@@ -80,18 +80,18 @@ megaJoyControllerData_t getControllerData(void){
   // Set the analog sticks
   //  Unlike UnoJoy, which has 8-bit analog axes for PS3 compatibilty,
   //  MegaJoy uses 10-bit analog values, to fully use the Arduino analogRead range
-  controllerData.analogAxisArray[0] = constrain(map(avgRead(A0), throttleMin, throttleMax, 0, 255), 0, 255);
-  controllerData.analogAxisArray[1] = analogRead(A1);
-  controllerData.analogAxisArray[2] = analogRead(A2); 
-  controllerData.analogAxisArray[3] = analogRead(A3); 
-  controllerData.analogAxisArray[4] = analogRead(A4); 
-  controllerData.analogAxisArray[5] = analogRead(A5); 
-  controllerData.analogAxisArray[6] = analogRead(A6); 
-  controllerData.analogAxisArray[7] = analogRead(A7); 
-  controllerData.analogAxisArray[8] = analogRead(A8); 
-  controllerData.analogAxisArray[9] = analogRead(A9); 
-  controllerData.analogAxisArray[10] = analogRead(A10); 
-  controllerData.analogAxisArray[11] = analogRead(A11);
+  controllerData.analogAxisArray[0] = constrain(map(avgRead(A0), throttleMin, throttleMax, 0, 1024), 0, 1024);
+  controllerData.analogAxisArray[1] = constrain(map(avgRead(A1), throttleMin, throttleMax, 0, 1024), 0, 1024);
+  controllerData.analogAxisArray[2] = constrain(map(avgRead(A2), throttleMin, throttleMax, 0, 1024), 0, 1024);
+  controllerData.analogAxisArray[3] = constrain(map(avgRead(A3), throttleMin, throttleMax, 0, 1024), 0, 1024);
+  controllerData.analogAxisArray[4] = constrain(map(avgRead(A4), throttleMin, throttleMax, 0, 1024), 0, 1024);
+  controllerData.analogAxisArray[5] = constrain(map(avgRead(A5), throttleMin, throttleMax, 0, 1024), 0, 1024);
+  controllerData.analogAxisArray[6] = constrain(map(avgRead(A6), throttleMin, throttleMax, 0, 1024), 0, 1024);
+  controllerData.analogAxisArray[7] = constrain(map(avgRead(A7), throttleMin, throttleMax, 0, 1024), 0, 1024);
+  controllerData.analogAxisArray[8] = constrain(map(avgRead(A8), throttleMin, throttleMax, 0, 1024), 0, 1024);
+  controllerData.analogAxisArray[9] = constrain(map(avgRead(A9), throttleMin, throttleMax, 0, 1024), 0, 1024);
+  controllerData.analogAxisArray[10] = constrain(map(avgRead(A10), throttleMin, throttleMax, 0, 1024), 0, 1024);
+  controllerData.analogAxisArray[11] = constrain(map(avgRead(A11), throttleMin, throttleMax, 0, 1024), 0, 1024);
 
   if (DEBUG) {
     Serial.print(throttleMin);
